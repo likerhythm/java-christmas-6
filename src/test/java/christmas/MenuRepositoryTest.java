@@ -1,6 +1,5 @@
 package christmas;
 
-import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,7 +12,7 @@ public class MenuRepositoryTest {
 
     MenuRepository menuRepository = new MenuRepository();
 
-    @DisplayName("이름을 메뉴를 찾지 못한 경우 테스트에 실패합니다")
+    @DisplayName("메뉴를 이름으로 찾기")
     @ParameterizedTest
     @MethodSource("provideMenuNameAndExpectMenu")
     void findByNameTest(String menuName, Menu expectMenu) {

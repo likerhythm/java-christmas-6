@@ -10,7 +10,7 @@ public class InputValidatorTest {
 
     InputValidator inputValidator = new InputValidator();
 
-    @DisplayName("올바른 방문 날짜를 검증하지 못하는 경우 테스트에 실패합니다")
+    @DisplayName("올바른 방문 날짜 검증")
     @ParameterizedTest
     @ValueSource(strings = {
             "1",
@@ -23,7 +23,7 @@ public class InputValidatorTest {
         assertDoesNotThrow(() -> inputValidator.validateVisitDate(input));
     }
 
-    @DisplayName("올바르지 않은 방문 날짜를 검증하지 못하는 경우 테스트에 실패합니다")
+    @DisplayName("올바르지 않은 방문 날짜 검증")
     @ParameterizedTest
     @ValueSource(strings = {
             "0",
@@ -35,7 +35,7 @@ public class InputValidatorTest {
         assertThrows(IllegalArgumentException.class, () -> inputValidator.validateVisitDate(input));
     }
 
-    @DisplayName("올바른 주문 형식을 검증하지 못하면 테스트에 실패합니다")
+    @DisplayName("올바른 주문 형식을 검증")
     @ParameterizedTest
     @ValueSource(strings = {
             "해산물파스타-2,레드와인-1,초코케이크-1",
@@ -48,7 +48,7 @@ public class InputValidatorTest {
         assertDoesNotThrow(() -> inputValidator.validateOrderInput(orderInput));
     }
 
-    @DisplayName("올바르지 않은 주문 형식을 검증하지 못하면 테스트에 실패합니다")
+    @DisplayName("올바르지 않은 주문 형식 검증")
     @ParameterizedTest
     @ValueSource(strings = {
             "해산물파스타-2,레드와인-1,초코케이크-",
