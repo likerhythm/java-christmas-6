@@ -1,5 +1,6 @@
-package christmas;
+package christmas.repository;
 
+import christmas.model.menu.Menu;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,4 +1,6 @@
-package christmas;
+package christmas.repository;
+
+import christmas.model.menu.Menu;
 
 import java.util.Arrays;
 

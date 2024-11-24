@@ -1,15 +1,17 @@
-package christmas;
+package christmas.service;
+
+import christmas.model.menu.Menu;
+import christmas.repository.MenuRepository;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-public class MenuMapper {
+public class MenuMapperService {
 
     private final MenuRepository menuRepository;
 
-    public MenuMapper(MenuRepository menuRepository) {
+    public MenuMapperService(MenuRepository menuRepository) {
         this.menuRepository = menuRepository;
     }
 

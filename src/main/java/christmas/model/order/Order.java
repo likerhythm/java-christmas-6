@@ -1,4 +1,6 @@
-package christmas;
+package christmas.model.order;
+
+import christmas.model.menu.Menu;
 
 public class Order {
 

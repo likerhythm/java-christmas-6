@@ -1,4 +1,4 @@
-package christmas;
+package christmas.model.order;
 
 import java.util.List;
 

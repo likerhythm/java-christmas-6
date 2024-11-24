@@ -1,7 +1,8 @@
-package christmas;
+package christmas.service;
 
+import christmas.model.menu.Menu;
+import christmas.repository.MenuRepository;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -11,15 +12,15 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MenuMapperTest {
+public class MenuMapperServiceTest {
 
-    MenuMapper menuMapper = new MenuMapper(new MenuRepository());
+    MenuMapperService menuMapperService = new MenuMapperService(new MenuRepository());
 
     @DisplayName("문자열을 Menu로 매핑")
     @ParameterizedTest
     @MethodSource("provideParsedOrderInputAndMenuMapperResult")
     void mapToMenuTest(Map<String, String> parsedOrderInput, Map<Menu, Integer> mapToMenu) {
-        assertEquals(mapToMenu, menuMapper.mapParsedOrderInput(parsedOrderInput));
+        assertEquals(mapToMenu, menuMapperService.mapParsedOrderInput(parsedOrderInput));
     }
 
     static Stream<Arguments> provideParsedOrderInputAndMenuMapperResult() {
@@ -33,7 +34,7 @@ public class MenuMapperTest {
     @ParameterizedTest
     @MethodSource("provideInvalidParsedOrderInputAndMenuMapperResult")
     void errorMapToMenuTest(Map<String, String> parsedOrderInput) {
-        assertThrows(IllegalArgumentException.class, () -> menuMapper.mapParsedOrderInput(parsedOrderInput));
+        assertThrows(IllegalArgumentException.class, () -> menuMapperService.mapParsedOrderInput(parsedOrderInput));
     }
 
     static Stream<Arguments> provideInvalidParsedOrderInputAndMenuMapperResult() {

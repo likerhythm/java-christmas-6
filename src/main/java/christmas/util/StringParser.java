@@ -1,4 +1,7 @@
-package christmas;
+package christmas.util;
+
+import christmas.view.InputValidator;
+import christmas.view.InputView;
 
 import java.util.Arrays;
 import java.util.LinkedHashMap;

@@ -1,6 +1,6 @@
-package christmas;
+package christmas.model.menu;
 
-import static christmas.MenuType.*;
+import static christmas.model.menu.MenuType.*;
 
 public enum Menu {
 

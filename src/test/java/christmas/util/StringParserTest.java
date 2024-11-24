@@ -1,4 +1,4 @@
-package christmas;
+package christmas.util;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
