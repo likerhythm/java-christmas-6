@@ -1,7 +1,6 @@
-package christmas.model;
+package christmas.model.order;
 
 import christmas.model.menu.Menu;
-import christmas.model.order.Order;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

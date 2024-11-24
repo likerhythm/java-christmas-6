@@ -16,7 +16,7 @@ public class DateRange {
         return new DateRange(startDate, endDate);
     }
 
-    public boolean inRange(LocalDate date) {
+    public boolean isInRange(LocalDate date) {
         return startDate.isEqual(date) || startDate.isBefore(date)
                 || endDate.isAfter(date) || endDate.isEqual(date);
     }

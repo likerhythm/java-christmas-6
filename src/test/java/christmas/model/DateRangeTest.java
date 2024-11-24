@@ -12,6 +12,6 @@ public class DateRangeTest {
     void inRangeTest() {
         LocalDate now = LocalDate.now();
         DateRange dateRange = DateRange.of(LocalDate.of(2024, 1, 1), LocalDate.of(2024, 12, 31));
-        assertTrue(dateRange.inRange(now));
+        assertTrue(dateRange.isInRange(now));
     }
 }

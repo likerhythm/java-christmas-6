@@ -38,4 +38,16 @@ public class Orders {
             throw new IllegalArgumentException("유효하지 않은 주문입니다. 다시 입력해 주세요.");
         }
     }
+
+    public int countDessert() {
+        return orderSheet.stream()
+                .mapToInt(Order::countDessert)
+                .sum();
+    }
+
+    public int countMainMenu() {
+        return orderSheet.stream()
+                .mapToInt(Order::countMainMenu)
+                .sum();
+    }
 }

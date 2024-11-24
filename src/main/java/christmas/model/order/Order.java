@@ -30,4 +30,18 @@ public class Order {
     int getQuantity() {
         return this.quantity;
     }
+
+    public int countDessert() {
+        if (menu.isDessert()) {
+            return quantity;
+        }
+        return 0;
+    }
+
+    public int countMainMenu() {
+        if (menu.isMain()) {
+            return quantity;
+        }
+        return 0;
+    }
 }

@@ -39,4 +39,12 @@ public enum Menu {
     public int calculateCost(int quantity) {
         return cost * quantity;
     }
+
+    public boolean isDessert() {
+        return type == DESSERT;
+    }
+
+    public boolean isMain() {
+        return type == MAIN;
+    }
 }
