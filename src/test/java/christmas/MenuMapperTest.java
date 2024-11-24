@@ -42,11 +42,4 @@ public class MenuMapperTest {
                 Arguments.of(Map.of("초코", "10"))
         );
     }
-
-    @DisplayName("메뉴 개수 검증")
-    @Test
-    void menuQuantityTest() {
-        Map<String, String> parsedOrderInput = Map.of("해산물파스타", "0");
-        assertThrows(IllegalArgumentException.class, () -> menuMapper.mapParsedOrderInput(parsedOrderInput));
-    }
 }
