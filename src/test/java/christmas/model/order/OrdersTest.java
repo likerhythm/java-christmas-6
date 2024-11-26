@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -32,5 +33,18 @@ public class OrdersTest {
         Order zeroColaOrder = Order.of(Menu.ZERO_COLA, 5);
         Orders orders = Orders.of(List.of(seafoodPastaOrder, zeroColaOrder));
         assertEquals(350000 + 15000, orders.calculateTotalOrderCost());
+    }
+
+    @DisplayName("출력용 주문 내역 dto가 올바르게 생성되는지 확인")
+    @Test
+    void createOrderDetailDtoTest() {
+        Orders orders = Orders.of(List.of(Order.of(Menu.SEAFOOD_PASTA, 1), Order.of(Menu.ICE_CREAM, 3)));
+        assertEquals(
+                List.of(
+                        new OrderDetailDto("해산물파스타", "1"),
+                        new OrderDetailDto("아이스크림", "3")
+                ),
+                orders.createOrderDetailDtos()
+        );
     }
 }

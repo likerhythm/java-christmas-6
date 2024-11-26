@@ -2,6 +2,9 @@ package christmas.model.order;
 
 import christmas.model.menu.Menu;
 
+import java.util.AbstractMap;
+import java.util.Map;
+
 public class Order {
 
     private final Menu menu;
@@ -43,5 +46,9 @@ public class Order {
             return quantity;
         }
         return 0;
+    }
+
+    public OrderDetailDto getOrderDetailDto() {
+        return new OrderDetailDto(menu.getName(), String.valueOf(quantity));
     }
 }

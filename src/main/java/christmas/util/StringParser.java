@@ -12,10 +12,10 @@ import java.util.stream.Collectors;
 
 public class StringParser {
 
-    public Map<String, String> parseOrderInput(String orderInput) {
+    public static Map<String, String> parseOrderInput(String orderInput) {
         String[] splitOrderInput = orderInput.split(InputView.ORDER_INPUT_DELIMITER);
         return Arrays.stream(splitOrderInput)
-                .map(this::validateAndMatch)
+                .map(StringParser::validateAndMatch)
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
                         Map.Entry::getValue,
@@ -26,7 +26,7 @@ public class StringParser {
                 ));
     }
 
-    private Map.Entry<String, String> validateAndMatch(String input) {
+    private static Map.Entry<String, String> validateAndMatch(String input) {
         Pattern pattern = Pattern.compile(InputValidator.ORDER_INPUT_REGEX);
         Matcher matcher = pattern.matcher(input);
         if (!matcher.find()) {

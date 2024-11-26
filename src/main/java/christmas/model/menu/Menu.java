@@ -47,4 +47,8 @@ public enum Menu {
     public boolean isMain() {
         return type == MAIN;
     }
+
+    public String getName() {
+        return name;
+    }
 }

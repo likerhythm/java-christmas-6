@@ -1,6 +1,9 @@
 package christmas.model.order;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Orders {
 
@@ -49,5 +52,11 @@ public class Orders {
         return orderSheet.stream()
                 .mapToInt(Order::countMainMenu)
                 .sum();
+    }
+
+    public List<OrderDetailDto> createOrderDetailDtos() {
+        return orderSheet.stream()
+                .map(Order::getOrderDetailDto)
+                .collect(Collectors.toList());
     }
 }
