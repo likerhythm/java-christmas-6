@@ -3,9 +3,6 @@ package christmas.model.order;
 import christmas.model.ErrorMessage;
 import christmas.model.menu.Menu;
 
-import java.util.AbstractMap;
-import java.util.Map;
-
 public class Order {
 
     private static final int LOWER_LIMIT_OF_MENU_QUANTITY = 0;
