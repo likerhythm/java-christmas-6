@@ -23,7 +23,7 @@ public class OutputView {
     }
 
     public void displayNoticeEventPreview(String visitDay) {
-        System.out.println(NOTICE_EVENT_PREVIEW);
+        System.out.println(buildNoticeEventPreviewMessage(visitDay));
     }
 
     public void displayOrderDetails(List<OrderDetailDto> orderDetailDtos) {

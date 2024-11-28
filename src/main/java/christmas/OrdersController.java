@@ -2,6 +2,7 @@ package christmas;
 
 import christmas.dto.DiscountDetailsDto;
 import christmas.model.ErrorMessage;
+import christmas.model.event.EventDates;
 import christmas.service.EventService;
 import christmas.model.menu.Menu;
 import christmas.model.order.Order;
@@ -51,7 +52,7 @@ public class OrdersController {
         outputView.displayWelcomeMessage();
         String visitDay = RetryExecutor.executeWithRetry(this::getVisitDate);
         Orders orders = RetryExecutor.executeWithRetry(this::getOrders);
-        LocalDate visitDate = LocalDate.of(2024, 12, Integer.parseInt(visitDay));
+        LocalDate visitDate = LocalDate.of(EventDates.EVENT_YEAR, EventDates.EVENT_MONTH, Integer.parseInt(visitDay));
         eventService.apply(orders, visitDate);
         runOutputView(visitDay, orders);
     }

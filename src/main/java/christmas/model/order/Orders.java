@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 public class Orders {
 
+    private static final int UPPER_LIMIT_OF_TOTAL_MENU_QUANTITY = 20;
     private final List<Order> orderSheet;
 
     private Orders(List<Order> orderSheet) {
@@ -29,7 +30,7 @@ public class Orders {
     }
 
     private static void validateMaxMenuCount(int totalMenuQuantity) {
-        if (totalMenuQuantity > 20) {
+        if (totalMenuQuantity > UPPER_LIMIT_OF_TOTAL_MENU_QUANTITY) {
             throw new IllegalArgumentException(ErrorMessage.INVALID_ORDER_INPUT.getMessage());
         }
     }
