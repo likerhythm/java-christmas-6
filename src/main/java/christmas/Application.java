@@ -1,6 +1,6 @@
 package christmas;
 
-import christmas.model.event.EventService;
+import christmas.service.EventService;
 import christmas.repository.EventBadgeRepository;
 import christmas.repository.MenuRepository;
 import christmas.service.MenuMapperService;

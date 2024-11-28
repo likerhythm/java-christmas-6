@@ -2,7 +2,7 @@ package christmas;
 
 import christmas.dto.DiscountDetailsDto;
 import christmas.model.ErrorMessage;
-import christmas.model.event.EventService;
+import christmas.service.EventService;
 import christmas.model.menu.Menu;
 import christmas.model.order.Order;
 import christmas.model.order.OrderDetailDto;

@@ -1,6 +1,7 @@
-package christmas.model.event;
+package christmas.service;
 
 import christmas.dto.DiscountDetailsDto;
+import christmas.model.event.EventCalendar;
 import christmas.model.menu.Menu;
 import christmas.model.order.Orders;
 

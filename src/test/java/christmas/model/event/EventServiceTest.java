@@ -3,6 +3,7 @@ package christmas.model.event;
 import christmas.model.menu.Menu;
 import christmas.model.order.Orders;
 import christmas.model.order.Order;
+import christmas.service.EventService;
 import org.junit.jupiter.api.*;
 
 import java.time.LocalDate;
