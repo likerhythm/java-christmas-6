@@ -24,12 +24,6 @@ public class Application {
         MenuMapperService menuMapperService = new MenuMapperService(menuRepository);
         EventService eventService = new EventService();
         EventBadgeRepository eventBadgeRepository = new EventBadgeRepository();
-        OrdersController ordersController = new OrdersController(
-                inputView,
-                outputView,
-                menuMapperService,
-                eventService,
-                eventBadgeRepository);
-        return ordersController;
+        return new OrdersController(inputView, outputView, menuMapperService, eventService, eventBadgeRepository);
     }
 }
