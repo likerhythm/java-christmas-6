@@ -1,5 +1,6 @@
 package christmas.model;
 
+import christmas.model.event.EventDates;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

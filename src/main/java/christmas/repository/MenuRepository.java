@@ -1,5 +1,6 @@
 package christmas.repository;
 
+import christmas.model.ErrorMessage;
 import christmas.model.menu.Menu;
 
 import java.util.Arrays;
@@ -10,6 +11,6 @@ public class MenuRepository {
         return Arrays.stream(Menu.values())
                 .filter(menu -> menu.isEqualName(menuName))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("유효하지 않은 주문입니다. 다시 입력해 주세요."));
+                .orElseThrow(() -> new IllegalArgumentException(ErrorMessage.INVALID_ORDER_INPUT.getMessage()));
     }
 }

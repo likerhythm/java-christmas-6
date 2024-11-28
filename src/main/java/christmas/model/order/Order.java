@@ -1,5 +1,6 @@
 package christmas.model.order;
 
+import christmas.model.ErrorMessage;
 import christmas.model.menu.Menu;
 
 import java.util.AbstractMap;
@@ -7,6 +8,7 @@ import java.util.Map;
 
 public class Order {
 
+    private static final int LOWER_LIMIT_OF_MENU_QUANTITY = 0;
     private final Menu menu;
     private final int quantity;
 
@@ -16,8 +18,8 @@ public class Order {
     }
 
     public static Order of(Menu menu, int quantity) {
-        if (quantity <= 0) {
-            throw new IllegalArgumentException("유효하지 않은 주문입니다. 다시 입력해 주세요.");
+        if (quantity <= LOWER_LIMIT_OF_MENU_QUANTITY) {
+            throw new IllegalArgumentException(ErrorMessage.INVALID_ORDER_INPUT.getMessage());
         }
         return new Order(menu, quantity);
     }

@@ -1,8 +1,8 @@
 package christmas.model.order;
 
-import java.util.LinkedHashMap;
+import christmas.model.ErrorMessage;
+
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Orders {
@@ -30,7 +30,7 @@ public class Orders {
 
     private static void validateMaxMenuCount(int totalMenuQuantity) {
         if (totalMenuQuantity > 20) {
-            throw new IllegalArgumentException("유효하지 않은 주문입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException(ErrorMessage.INVALID_ORDER_INPUT.getMessage());
         }
     }
 
@@ -38,7 +38,7 @@ public class Orders {
         boolean isAllDrink = orderSheet.stream()
                 .allMatch(Order::isDrink);
         if (isAllDrink) {
-            throw new IllegalArgumentException("유효하지 않은 주문입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException(ErrorMessage.INVALID_ORDER_INPUT.getMessage());
         }
     }
 

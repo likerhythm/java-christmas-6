@@ -1,6 +1,7 @@
 package christmas.repository;
 
-import christmas.model.EventBadge;
+import christmas.model.ErrorMessage;
+import christmas.model.event.EventBadge;
 
 import java.util.Arrays;
 
@@ -11,6 +12,6 @@ public class EventBadgeRepository {
                 .filter(badge -> badge.compareCondition(totalDiscountCost))
                 .findFirst()
                 .map(EventBadge::getName)
-                .orElseThrow(() -> new IllegalArgumentException("혜택 금액이 유효하지 않습니다"));
+                .orElseThrow(() -> new IllegalArgumentException(ErrorMessage.INVALID_DISCOUNT.getMessage()));
     }
 }

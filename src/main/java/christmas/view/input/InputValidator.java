@@ -1,17 +1,23 @@
-package christmas.view;
+package christmas.view.input;
+
+import christmas.model.ErrorMessage;
 
 import java.util.Arrays;
 
 public class InputValidator {
 
+    public static final String ORDER_INPUT_DELIMITER = ",";
     public static final String ORDER_INPUT_REGEX = "^([가-힣a-zA-Z0-9\\s]+)-(\\s*[\\d]+\\s*)$";
 
+    private static final int LOWER_LIMIT_OF_VISIT_DATE = 1;
+    private static final int UPPER_LIMIT_OF_VISIT_DATE = 31;
+
     public String validateOrderInput(String orderInput) {
-        String[] splitOrderInput = orderInput.split(InputView.ORDER_INPUT_DELIMITER);
+        String[] splitOrderInput = orderInput.split(ORDER_INPUT_DELIMITER);
         boolean isValid = Arrays.stream(splitOrderInput)
                 .allMatch(split -> split.matches(ORDER_INPUT_REGEX));
         if (!isValid) {
-            throw new IllegalArgumentException("유효하지 않은 주문입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException(ErrorMessage.INVALID_ORDER_INPUT.getMessage());
         }
         return orderInput.trim();
     }
@@ -19,12 +25,12 @@ public class InputValidator {
     public String validateVisitDate(String visitDate) {
         try {
             int integerVisitDate = validateIntegerVisitDate(visitDate);
-            if (!(1 <= integerVisitDate && integerVisitDate <= 31)) {
+            if (!(LOWER_LIMIT_OF_VISIT_DATE <= integerVisitDate && integerVisitDate <= UPPER_LIMIT_OF_VISIT_DATE)) {
                 throw new IllegalArgumentException();
             }
             return String.valueOf(integerVisitDate);
         } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("유효하지 않은 날짜입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException(ErrorMessage.INVALID_VISIT_DATE.getMessage());
         }
     }
 

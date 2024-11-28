@@ -1,10 +1,8 @@
-package christmas.view;
+package christmas.view.input;
 
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
-
-    public static final String ORDER_INPUT_DELIMITER = ",";
 
     private final InputValidator inputValidator;
 
